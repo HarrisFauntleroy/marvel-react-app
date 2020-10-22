@@ -1,5 +1,1 @@
-# marvel-app
-# marvel-app
-# marvel-app
-# marvel-app
-# marvel-app
+React app that integrates with the Marvel API
