@@ -7,7 +7,8 @@ const CharacterGrid = ({ characters, isLoading }) => {
     return isLoading ? (
         <img
             src={spinner}
-            alt="loading wheel">
+            alt="loading wheel"
+            className="loading">
         </img>
     ) : (
             <section className='cards'>
