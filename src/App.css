@@ -40,7 +40,7 @@ body {
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 0 20px;
+  padding: 1em;
 }
 
 .btn {
@@ -96,7 +96,6 @@ header img {
   font-size: 40px;
   text-transform: uppercase;
   text-decoration: none;
-  margin: 0 var(--spacing, 0px);
   transition: margin 0.25s;
   transition: ease 250ms all;
 }
@@ -118,11 +117,6 @@ header img {
   text-align: center;
 }
 
-.navbar li:hover > a {
-  color: blue;
-  transition: ease 250ms all;
-}
-
 .navbar a .sketch {
   width: 160px;
   height: 80px;
@@ -139,9 +133,9 @@ header img {
   transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
 }
 
-.navbar a:hover,
 .navbar a:focus {
-  --spacing: 4px;
+  color: blue;
+  transition: ease 250ms all;
   --stroke: var(--line-active);
   --stroke-delay: 0.1s;
   --offset: 180px;
@@ -162,6 +156,9 @@ input[type="text"] {
   border-radius: 5px;
   width: 60%;
   margin: auto;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 1em;
 }
 
 /* ------------ Cards ------------ */
