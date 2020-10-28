@@ -56,10 +56,11 @@ body {
 
 header {
   height: 200px;
+  position: relative;
 }
 
 header img {
-  width: 200px;
+  width: 300px;
 }
 
 .center {
@@ -68,11 +69,10 @@ header img {
   justify-content: center;
 }
 
-/* TODO, make the react logo the loading spinner */
 .loading {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 80vh;
+  left: 50vw;
   height: 200px;
   width: 200px;
   margin-top: -100px;
@@ -83,7 +83,7 @@ header img {
 /* ------------ Navbar ------------ */
 
 .navbar {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .navbar a {
