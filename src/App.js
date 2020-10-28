@@ -14,9 +14,15 @@ const App = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await Axios(`https://gateway.marvel.com/v1/public/characters?apikey=4f47f803daa3f1a7473b5726c6d830f6&ts=1&hash=137f555f5010a03f317ea7bfc5ee3c7a&name=${query}`)
+      const result = await Axios(`https://gateway.marvel.com/v1/public/characters?`, {
+        params: {
+          apikey: '4f47f803daa3f1a7473b5726c6d830f6',
+          ts: '1',
+          hash: '137f555f5010a03f317ea7bfc5ee3c7a',
+          nameStartsWith: `${query || 'a'}`
+        }
+      })
 
-      console.log(result.data.data.results)
       setCharacters(result.data.data.results)
       setIsLoading(false)
     }
