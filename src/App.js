@@ -13,21 +13,23 @@ const App = () => {
   const [query, setQuery] = useState('')
 
   useEffect(() => {
-    const fetchItems = async () => {
-      const result = await Axios(`https://gateway.marvel.com/v1/public/characters?`, {
-        params: {
-          apikey: '4f47f803daa3f1a7473b5726c6d830f6',
-          ts: '1',
-          hash: '137f555f5010a03f317ea7bfc5ee3c7a',
-          nameStartsWith: `${query || 'a'}`
-        }
-      })
 
-      setCharacters(result.data.data.results)
+    Axios.get(`https://gateway.marvel.com/v1/public/characters?`, {
+      params: Object.assign({
+        apikey: '4f47f803daa3f1a7473b5726c6d830f6',
+        ts: '1',
+        hash: '137f555f5010a03f317ea7bfc5ee3c7a'
+      },
+        query !== '' ? { nameStartsWith: query } : null
+      )
+    }).then((res) => {
+      console.log(res)
+      setCharacters(res.data.data.results)
       setIsLoading(false)
-    }
+    }).catch(function (err) {
+      console.log(err);
+    })
 
-    fetchItems()
   }, [query])
 
   return (
