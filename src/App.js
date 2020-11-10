@@ -13,19 +13,20 @@ const App = () => {
   const [query, setQuery] = useState('')
 
   useEffect(() => {
-
-    Axios.get(`https://gateway.marvel.com/v1/public/characters?`, {
+    // TODO Add a delay to search input so each character typed isnt a whole new get request
+    Axios(`https://gateway.marvel.com/v1/public/characters?`, {
       params: Object.assign({
-        apikey: '4f47f803daa3f1a7473b5726c6d830f6',
+        apikey: '59ad2aa3fcbed5a077923510a14604cf',
         ts: '1',
-        hash: '137f555f5010a03f317ea7bfc5ee3c7a'
+        hash: 'd4db04e586186471a9f4b0d9fc0f1697'
       },
         query !== '' ? { nameStartsWith: query } : null
       )
-    }).then((res) => {
-      console.log(res)
+    }).then(res => {
       setCharacters(res.data.data.results)
       setIsLoading(false)
+      console.log(res)
+
     }).catch(function (err) {
       console.log(err);
     })
