@@ -28,7 +28,7 @@ const App = () => {
   useEffect(() => {
     axios(`https://gateway.marvel.com/v1/public/characters?`, {
       params: Object.assign({
-        apikey: '59ad2aa3fcbed5a077923510a14604cf',
+        apikey: process.env.REACT_APP_APIKEY,
         ts: '1',
         hash: 'd4db04e586186471a9f4b0d9fc0f1697'
       },
