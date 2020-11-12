@@ -1,5 +1,5 @@
 import './App.css';
-import Axios from 'axios'
+import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Header from './components/ui/Header';
 import CharacterGrid from './components/characters/CharacterGrid';
@@ -12,9 +12,21 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [query, setQuery] = useState('')
 
+  // Debouncing Function, adds 1s delay before function since last call
+  const debounce = (callback, delay) => {
+    let timeoutID;
+    return function (...args) {
+      if (timeoutID) {
+        clearTimeout(timeoutID)
+      }
+      timeoutID = setTimeout(() => {
+        callback(...args)
+      }, delay)
+    }
+  }
+
   useEffect(() => {
-    // TODO Add a delay to search input so each character typed isnt a whole new get request
-    Axios(`https://gateway.marvel.com/v1/public/characters?`, {
+    axios(`https://gateway.marvel.com/v1/public/characters?`, {
       params: Object.assign({
         apikey: '59ad2aa3fcbed5a077923510a14604cf',
         ts: '1',
@@ -36,7 +48,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <Search getQuery={(q) => setQuery(q)} />
+      <Search getQuery={debounce((q) => setQuery(q), 1000)} />
       <Navbar />
       <CharacterGrid isLoading={isLoading} characters={characters} />
     </div>
