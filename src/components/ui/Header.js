@@ -3,7 +3,7 @@ import logo from '../../img/logo.png'
 const Header = () => {
 
     return (
-        <header className="center">
+        <header>
             <img src={logo} alt="Marvel + React logo"></img>
         </header>
     )

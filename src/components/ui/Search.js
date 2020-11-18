@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-const Search = ({ getQuery }) => {
+const Search = ({ getQuery, getFilter }) => {
 
     const [text, setText] = useState('')
 
@@ -9,9 +9,32 @@ const Search = ({ getQuery }) => {
         getQuery(q)
     }
 
+    let handleClick = (filter) => {
+        getFilter(filter)
+    }
+
     return (
-        <section className="search">
-            <form>
+
+        <nav className="navbar">
+            <ul>
+                <li>
+                    <button onClick={(filter) => handleClick('characters')} href="/characters">Characters</button >
+                </li>
+                <li>
+                    <button onClick={(filter) => handleClick('comics')} href="/comics">Comics</button >
+                </li>
+                <li>
+                    <button onClick={(filter) => handleClick('creators')} href="/creators">Creators</button >
+                </li>
+                <li>
+                    <button onClick={(filter) => handleClick('events')} href="/events">Events</button >
+                </li>
+                <li>
+                    <button onClick={(filter) => handleClick('series')} href="/series">Series</button >
+                </li>
+                <li>
+                    <button onClick={(filter) => handleClick('stories')} href="/stories">Stories</button >
+                </li>
                 <input
                     type="text"
                     className="form-control"
@@ -20,8 +43,9 @@ const Search = ({ getQuery }) => {
                     onChange={(e) => onChange(e.target.value)}
                     autoFocus
                 />
-            </form>
-        </section>
+            </ul>
+        </nav >
+
     )
 }
 
