@@ -6,6 +6,7 @@ import Search from '../ui/Search';
 
 export const Helper = () => {
 
+    // State variables
     const [characters, setCharacters] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [query, setQuery] = useState('')
@@ -24,8 +25,10 @@ export const Helper = () => {
         }
     }
 
-    console.log(filter)
-
+    // Primary API call
+    // Searchs based on 'filter' state 
+    //possible values (characters, comics, creators, events, series, stories)
+    // Searches also based on 'query' state, a searchable value
     useEffect(() => {
         axios(`https://gateway.marvel.com/v1/public/` + filter + `?`, {
             params: Object.assign({
@@ -48,9 +51,11 @@ export const Helper = () => {
 
     return (
         <div>
-            <Search getQuery={debounce((q) => setQuery(q), 1000)} getFilter={(filter) => setFilter(filter)}/>
+            <Search getQuery={debounce((q) => setQuery(q), 1000)} getFilter={(filter) => setFilter(filter)} />
             <Header />
-            <CharacterGrid isLoading={isLoading} characters={characters} />
+            <div className="card-container">
+                <CharacterGrid isLoading={isLoading} characters={characters} />
+            </div>
         </div>
     )
 }
