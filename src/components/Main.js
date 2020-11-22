@@ -1,10 +1,10 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import Header from '../ui/Header';
-import CharacterGrid from './CharacterGrid';
-import Search from '../ui/Search';
+import Header from './ui/Header';
+import ItemGrid from './Items/ItemGrid';
+import Search from './ui/Search';
 
-export const Helper = () => {
+export const Main = () => {
 
     // State variables
     const [characters, setCharacters] = useState([])
@@ -54,7 +54,7 @@ export const Helper = () => {
             <Search getQuery={debounce((q) => setQuery(q), 1000)} getFilter={(filter) => setFilter(filter)} />
             <Header />
             <div className="card-container">
-                <CharacterGrid isLoading={isLoading} characters={characters} />
+                <ItemGrid isLoading={isLoading} characters={characters} />
             </div>
         </div>
     )

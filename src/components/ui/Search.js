@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const Search = ({ getQuery, getFilter }) => {
 
     const [text, setText] = useState('')
-
     const [isActive, setActive] = useState("false");
+    const [activeBtn, setActiveBtn] =  useState('characters')
 
     const handleToggle = () => {
       setActive(!isActive);
@@ -17,7 +17,7 @@ const Search = ({ getQuery, getFilter }) => {
 
     let handleClick = (filter) => {
         getFilter(filter)
-        
+        setActiveBtn(filter)
     }
 
     return (
@@ -25,22 +25,22 @@ const Search = ({ getQuery, getFilter }) => {
         <nav className="navbar">
             <ul className={`navlist ${isActive ? "closed" : "open"}`}>
                 <li>
-                    <button className={isActive ? "active" : "inactive"} onClick={(filter) => handleClick('characters')} href="/characters">Characters</button >
+                    <button className={activeBtn === 'characters' ? "active" : "inactive"} onClick={(filter) => handleClick('characters')} href="/characters">Characters</button >
                 </li>
                 <li>
-                    <button onClick={(filter) => handleClick('comics')} href="/comics">Comics</button >
+                    <button className={activeBtn === 'comics' ? "active" : "inactive"} onClick={(filter) => handleClick('comics')} href="/comics">Comics</button >
                 </li>
                 <li>
-                    <button onClick={(filter) => handleClick('creators')} href="/creators">Creators</button >
+                    <button className={activeBtn === 'creators' ? "active" : "inactive"} onClick={(filter) => handleClick('creators')} href="/creators">Creators</button >
                 </li>
                 <li>
-                    <button onClick={(filter) => handleClick('events')} href="/events">Events</button >
+                    <button className={activeBtn === 'events' ? "active" : "inactive"} onClick={(filter) => handleClick('events')} href="/events">Events</button >
                 </li>
                 <li>
-                    <button onClick={(filter) => handleClick('series')} href="/series">Series</button >
+                    <button className={activeBtn === 'series' ? "active" : "inactive"} onClick={(filter) => handleClick('series')} href="/series">Series</button >
                 </li>
                 <li>
-                    <button onClick={(filter) => handleClick('stories')} href="/stories">Stories</button >
+                    <button className={activeBtn === 'stories' ? "active" : "inactive"} onClick={(filter) => handleClick('stories')} href="/stories">Stories</button >
                 </li>
                 <input
                     type="text"

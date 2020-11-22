@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CharacterItem = ({ item }) => {
+const Item = ({ item }) => {
     return (
         <div className='card'>
             <div className='card-inner'>
@@ -23,4 +23,4 @@ const CharacterItem = ({ item }) => {
     )
 }
 
-export default CharacterItem
+export default Item
