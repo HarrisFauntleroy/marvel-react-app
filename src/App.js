@@ -5,8 +5,7 @@ import { Main } from './components/Main';
 const App = () => {
 
   return (
-    <div className="container">
-      <h1>test</h1>
+      <div className="container">
         <Main></Main>
       </div>
   );
