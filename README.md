@@ -21,10 +21,6 @@ npm run build
 -gcloud app deploy
 ```
 
-# See it in action
-
-https://marvel-react-app-hf.ts.r.appspot.com/
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
