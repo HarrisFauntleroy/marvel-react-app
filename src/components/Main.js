@@ -56,6 +56,9 @@ export const Main = () => {
             <div className="card-container">
                 <ItemGrid isLoading={isLoading} characters={characters} />
             </div>
+            <footer>
+                <span>See the source <i className="fab fa-github"></i></span>
+            </footer>
         </div>
     )
 }
