@@ -47,7 +47,6 @@ header img {
   width: 300px;
 }
 
-
 /* ------------ Center class ------------ */
 
 .center {
@@ -79,7 +78,6 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  border: 0.5px solid black;
 }
 
 .navbar button {
@@ -280,14 +278,11 @@ input[type="text"] {
     flex-direction: column;
   }
   .navbar li {
-    border: 1px solid black;
-    justify-content: flex-start;
     padding-left: 4px;
   }
   input[type="text"] {
     width: 100%;
     border-radius: 0;
-    border: 1px solid black;
   }
   .closed > li,
   .closed > input[type="text"] {
@@ -299,6 +294,7 @@ input[type="text"] {
   .navlist {
     display: flex;
     flex-direction: row;
+    padding: 0.5em;
   }
   .menu svg {
     display: none;
