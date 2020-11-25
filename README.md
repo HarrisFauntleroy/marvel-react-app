@@ -14,11 +14,10 @@ npm install
 npm run build
 ```
 
-## Deploy
+## Run
 
 ```bash
--gcloud init
--gcloud app deploy
+npm run dev
 ```
 
 ## Contributing
@@ -30,3 +29,7 @@ Please make sure to update tests as appropriate.
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Media
+
+![Image of Mobile-1](https://raw.githubusercontent.com/HarrisFauntleroy/marvel-react-app/main/example-images/marvel.png)
