@@ -5,7 +5,7 @@ import Item from './Item'
 const ItemGrid = ({ characters, isLoading }) => {
 
     return isLoading ? (
-        <Spinner></Spinner>
+        <Spinner />
     ) : (
             <section className='cards'>
                 {characters.map((item) => (

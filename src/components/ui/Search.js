@@ -4,11 +4,11 @@ const Search = ({ getQuery, getFilter }) => {
 
     const [text, setText] = useState('')
     const [isActive, setActive] = useState("false");
-    const [activeBtn, setActiveBtn] =  useState('characters')
+    const [activeBtn, setActiveBtn] = useState('characters')
 
     const handleToggle = () => {
-      setActive(!isActive);
-    };    
+        setActive(!isActive);
+    };
 
     const onChange = (q) => {
         setText(q)
